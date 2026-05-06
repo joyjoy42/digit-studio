@@ -27,17 +27,17 @@ export function HeroSection() {
 
     const timeline = [
       { phase: "empty" as Phase, delay: 0 },
-      { phase: "craft" as Phase, delay: 2500 },
-      { phase: "story" as Phase, delay: 5000 },
-      { phase: "standard" as Phase, delay: 7500 },
-      { phase: "reveal" as Phase, delay: 10000 },
+      { phase: "craft" as Phase, delay: 5000 },
+      { phase: "story" as Phase, delay: 10000 },
+      { phase: "standard" as Phase, delay: 15000 },
+      { phase: "reveal" as Phase, delay: 20000 },
     ];
 
     const timers = timeline.map(({ phase, delay }) =>
       setTimeout(() => setPhase(phase), delay)
     );
 
-    const completeTimer = setTimeout(() => setIsComplete(true), 11000);
+    const completeTimer = setTimeout(() => setIsComplete(true), 21000);
 
     return () => {
       timers.forEach(clearTimeout);
@@ -45,8 +45,37 @@ export function HeroSection() {
     };
   }, [skipped]);
 
+  const heroImages = [
+    "/hero/hero-1.jpg",
+    "/hero/hero-2.jpg",
+    "/hero/hero-3.jpg",
+  ];
+
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background">
+      {/* Background Image Sequence - Subtle during early phases */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence>
+          {phase !== "empty" && phase !== "craft" && (
+            <motion.div
+              key={phase}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: phase === "reveal" ? 0.07 : 0.03 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 2 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={heroImages[phase === "story" ? 0 : phase === "standard" ? 1 : 2]}
+                alt="Background Story"
+                fill
+                className="object-cover grayscale"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
       {/* Skip intro button — Plan 2 */}
       <AnimatePresence>
         {showSkip && phase !== "reveal" && (
@@ -67,16 +96,16 @@ export function HeroSection() {
 
       {/* Background grid — very subtle */}
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 z-1"
         style={{
           backgroundImage: `linear-gradient(oklch(0.88 0 0) 1px, transparent 1px), linear-gradient(90deg, oklch(0.88 0 0) 1px, transparent 1px)`,
           backgroundSize: "80px 80px",
-          opacity: 0.3,
+          opacity: 0.15,
         }}
       />
 
       {/* Corner markers */}
-      <div className="pointer-events-none absolute inset-8 md:inset-16">
+      <div className="pointer-events-none absolute inset-8 md:inset-16 z-1">
         {[
           "top-0 left-0",
           "top-0 right-0",
@@ -100,18 +129,18 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1.5 }}
               className="flex flex-col items-center justify-center gap-8 px-6 text-center"
             >
               <motion.div
                 animate={{ opacity: [0.2, 0.5, 0.2] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="h-32 w-24 border border-foreground/20 md:h-48 md:w-36"
               />
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 1 }}
                 className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground"
               >
                 Le cadre vide attend sa lumière
@@ -126,74 +155,53 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1.5 }}
               className="px-6 text-center"
             >
-              <p className="mx-auto max-w-2xl font-serif text-2xl font-light italic leading-relaxed text-foreground md:text-3xl lg:text-4xl">
+              <motion.p
+                initial={{ filter: "blur(10px)", opacity: 0 }}
+                animate={{ filter: "blur(0px)", opacity: 1 }}
+                transition={{ duration: 2 }}
+                className="mx-auto max-w-2xl font-serif text-2xl font-light italic leading-relaxed text-foreground md:text-3xl lg:text-4xl"
+              >
                 L&apos;art derrière l&apos;art, c&apos;est de décider ce qu&apos;on ne montre pas.
-              </p>
+              </motion.p>
             </motion.div>
           )}
 
-          {/* Phase 3: The Client's Story */}
+          {/* Phase 3: The Client's Story Upgrade */}
           {phase === "story" && (
             <motion.div
               key="story"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex items-center justify-center"
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+              className="relative flex items-center justify-center p-6"
             >
-              <div className="flex items-center gap-8 md:gap-16">
-                {/* Before - faded */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 0.3, x: 0 }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  className="relative"
-                >
-                  <div className="relative overflow-hidden h-32 w-24 border border-foreground/20 md:h-48 md:w-36">
-                    <Image src="/hero/raw.png" alt="Avant" fill className="object-cover grayscale" />
-                  </div>
-                  <span className="mt-2 block text-center text-[9px] uppercase tracking-[0.3em] text-muted-foreground">Avant</span>
-                </motion.div>
-
-                {/* Arrow */}
-                <div className="relative">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-4xl">
+                {heroImages.map((src, i) => (
                   <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 1.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="h-px w-16 origin-left bg-foreground md:w-32"
-                  />
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.4, delay: 2 }}
-                    className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground"
-                  />
-                </div>
-
-                {/* After - elevated */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50, scale: 0.9 }}
-                  animate={{ opacity: 1, x: 0, scale: 1 }}
-                  transition={{ duration: 1.2, delay: 1.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative"
-                >
-                  <div className="relative overflow-hidden h-32 w-24 border border-foreground md:h-48 md:w-36">
-                    <Image src="/hero/graded.png" alt="Après" fill className="object-cover" />
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 2.2 }}
-                      className="absolute inset-3 border border-foreground/30"
-                    />
-                  </div>
-                  <span className="mt-2 block text-center text-[9px] uppercase tracking-[0.3em] text-foreground">Après</span>
-                </motion.div>
+                    key={src}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.5, delay: 0.3 * i }}
+                    className={`relative aspect-[3/4] border border-foreground/10 overflow-hidden ${i === 2 ? 'hidden lg:block' : ''
+                      }`}
+                  >
+                    <Image src={src} alt={`Fashion Story ${i + 1}`} fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                    <div className="absolute inset-0 bg-background/20" />
+                  </motion.div>
+                ))}
               </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2.5 }}
+                className="absolute -bottom-16 text-[9px] uppercase tracking-[0.4em] text-muted-foreground"
+              >
+                Capturer l&apos;Essence • 2026
+              </motion.div>
             </motion.div>
           )}
 
@@ -204,10 +212,10 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1.5 }}
               className="px-6 text-center"
             >
-              <div className="mx-auto max-w-lg space-y-6">
+              <div className="mx-auto max-w-lg space-y-8">
                 {[
                   "Votre collection mérite d'être filmée comme un film.",
                   "Votre marque mérite d'être racontée, pas juste photographiée.",
@@ -215,10 +223,10 @@ export function HeroSection() {
                 ].map((text, i) => (
                   <motion.p
                     key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: i === 2 ? 1 : 0.3, y: 0 }}
-                    transition={{ delay: i * 0.6 }}
-                    className="text-sm uppercase tracking-[0.25em] text-foreground"
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: i === 2 ? 1 : 0.4, y: 0 }}
+                    transition={{ delay: i * 1, duration: 1.2 }}
+                    className="text-sm uppercase tracking-[0.3em] font-light text-foreground"
                   >
                     {text}
                   </motion.p>
@@ -233,26 +241,26 @@ export function HeroSection() {
               key="reveal"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
               className="relative z-10 mx-auto max-w-[1000px] px-6 text-center"
             >
               {/* Logo in hero */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, delay: 0.3 }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.5, delay: 0.3 }}
                 className="mb-8 md:mb-12"
               >
-                <h1 className="font-serif text-4xl font-light tracking-[0.15em] text-foreground md:text-6xl lg:text-7xl">
-                  digitcom_studios
-                </h1>
+                <div className="flex justify-center">
+                  <Image src="/logo.png" alt="Digitcom Studios" width={240} height={60} className="h-12 md:h-16 w-auto object-contain" />
+                </div>
               </motion.div>
 
               {/* Accent line */}
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
+                transition={{ duration: 1.2, delay: 1 }}
                 className="mx-auto mb-8 h-px w-24 bg-foreground md:mb-12 md:w-32"
               />
 
@@ -260,12 +268,12 @@ export function HeroSection() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, delay: 1.2 }}
-                className="mx-auto max-w-2xl font-serif text-lg font-light italic leading-relaxed text-foreground/70 md:text-xl lg:text-2xl"
+                transition={{ duration: 1.5, delay: 1.5 }}
+                className="mx-auto max-w-2xl font-serif text-lg font-light italic leading-relaxed text-foreground md:text-2xl lg:text-3xl"
               >
                 Votre collection mérite d&apos;être racontée.
                 <br />
-                <span className="not-italic text-base font-sans tracking-[0.05em] text-muted-foreground">
+                <span className="not-italic text-sm font-sans tracking-[0.1em] text-muted-foreground">
                   Laissez-nous écrire son histoire.
                 </span>
               </motion.p>
@@ -275,11 +283,11 @@ export function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isComplete ? 1 : 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="mt-12 flex flex-col items-center gap-4 md:mt-16 md:flex-row md:justify-center"
+                className="mt-12 flex flex-col items-center gap-6 md:mt-20 md:flex-row md:justify-center"
               >
                 <a
                   href="#portfolio"
-                  className="group relative inline-block overflow-hidden border border-foreground bg-transparent px-10 py-4 text-xs uppercase tracking-[0.2em] text-foreground transition-all hover:bg-foreground hover:text-background"
+                  className="group relative inline-block overflow-hidden border border-foreground bg-foreground px-12 py-5 text-xs uppercase tracking-[0.2em] text-background transition-all hover:bg-transparent hover:text-foreground"
                 >
                   Découvrir nos réalisations
                 </a>
@@ -366,3 +374,4 @@ export function HeroSection() {
     </section>
   );
 }
+
