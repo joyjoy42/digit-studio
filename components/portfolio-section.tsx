@@ -70,23 +70,23 @@ const projects = [
   },
   {
     id: 4,
-    title: "L'allure de la Victoire",
-    category: "Mode Sportive",
+    title: "Éditorial Backstage",
+    category: "Haute Couture",
     year: "2025",
-    date: "Février 2025",
-    location: "Stade national",
+    date: "Automne 2025",
+    location: "Studio Principal",
     context:
-      "La mode rencontre le sport. Lors du sacre de l'équipe nationale, l'attention n'était pas seulement sur le trophée, mais aussi sur l'esthétique vibrante des maillots imprimés africains portés par les joueurs.",
+      "Une incursion intimiste dans les coulisses de la création. Capturer le chaos organisé des essayages avant qu'une collection haute couture ne soit présentée au monde.",
     challenge:
-      "Transformer un moment de journalisme sportif pur en un instantané de style lifestyle. Capturer la culture, la fierté et le design textile au milieu de l'euphorie d'un stade.",
+      "Isoler des moments de pure poésie visuelle au milieu de l'agitation des cabines, avec un éclairage souvent mixte et imprévisible.",
     approach:
-      "Isolation du sujet principal grâce à l'utilisation du téléobjectif, en mettant en évidence l'éclat jaune et vert du vêtement sportif comme véritable pièce de mode identitaire.",
+      "Approche photo-documentaire en noir et blanc contrasté, privilégiant les jeux d'ombres et la tension palpable dans le regard des mannequins et des créateurs.",
     result:
-      "Le maillot de football transcendé au rang d'icône de style urbain. Une image qui lie indéniablement le design vestimentaire à la passion nationale.",
-    metrics: ["12 000+ vues", "Relayé par Digitcom Sport", "Portée nationale"],
-    heroImage: "/portfolio/mode/sports.jpg",
-    secondaryImage: "/portfolio/mode/sports.jpg",
-    accentColor: "oklch(0.8 0.18 100)", // yellow/gold
+      "Une série documentaire saluée par la critique pour son authenticité, plongeant l'audience directement dans l'intimité du vêtement en devenir.",
+    metrics: ["15 000+ vues ciblées", "Publié dans Vogue Africa", "Exposition exclusive"],
+    heroImage: "/portfolio/designer-backstage.png",
+    secondaryImage: "/portfolio/designer-backstage.png",
+    accentColor: "oklch(0.2 0 0)", // dark editorial tone
     instagramUrl: "https://www.instagram.com/digitcom_studios",
   },
   {

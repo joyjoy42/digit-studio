@@ -29,10 +29,10 @@ const projects = [
         image: "/portfolio/mode/beaded.jpg",
     },
     {
-        title: "L'allure de la Victoire",
-        category: "Mode Sportive",
+        title: "Éditorial Backstage",
+        category: "Haute Couture",
         year: "2025",
-        image: "/portfolio/mode/sports.jpg",
+        image: "/portfolio/designer-backstage.png",
     },
     {
         title: "Prêt-à-porter Urbain",
