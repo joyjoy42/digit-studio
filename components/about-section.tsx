@@ -116,15 +116,11 @@ export function AboutSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mt-12 space-y-6 text-lg text-muted-foreground"
             >
-              <p className="leading-relaxed">
-                Digitcom Mode a été fondé sur une conviction simple : dans l'industrie de la mode, le
-                meilleur travail vient du fait de savoir dire non. Non aux
-                projets qui ne respectent pas le vêtement. Non aux compromis qui diluent
-                la vision du créateur. Non au mythe que plus, c&apos;est mieux.
+              <p className="leading-relaxed hover:text-white transition-colors duration-300">
+                L'excellence commence en sachant dire non. Moins de bruit, plus d'impact. Nous sculptons la lumière pour rendre chaque silhouette inoubliable sans diluer la vision du créateur.
               </p>
-              <p className="leading-relaxed">
-                Nous sommes un collectif de créatifs et de photographes de mode qui croient que
-                chaque image doit porter le récit d'une collection.
+              <p className="leading-relaxed hover:text-accent transition-colors duration-300">
+                Plus qu'un studio, un collectif dédié à bâtir la légende de votre marque par des images qui parlent.
               </p>
             </motion.div>
           </div>
@@ -138,9 +134,7 @@ export function AboutSection() {
               className="relative border-l-2 border-accent pl-8"
             >
               <p className="font-serif text-2xl italic leading-relaxed text-foreground md:text-3xl">
-                &ldquo;L&apos;art derrière l&apos;art, c&apos;est de décider ce
-                qu&apos;on ne montre pas. Le cadre vide, le souffle retenu, le
-                silence qui complète la pensée.&rdquo;
+                &ldquo;Ce qu&apos;on ne montre pas fait l'art. Un cadre épuré, un souffle retenu, et le silence qui sublime le vêtement.&rdquo;
               </p>
               <p className="mt-6 text-sm uppercase tracking-[0.2em] text-muted-foreground">
                 — Manifeste du Studio

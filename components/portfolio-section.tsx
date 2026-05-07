@@ -12,18 +12,14 @@ const projects = [
     year: "2026",
     date: "Printemps 2026",
     location: "Dakar Fashion Week",
-    context:
-      "La marque Bakuso a présenté sa nouvelle collection avant-gardiste, fusionnant des motifs traditionnels avec des coupes contemporaines audacieuses, lors d'un défilé très attendu.",
-    challenge:
-      "Traduire l'énergie électrique du podium en images figées, en mettant en valeur les textures complexes des tissus verts imprimés et l'attitude assumée des mannequins sous un éclairage dramatique.",
-    approach:
-      "Une approche photographique frontale, capturant l'allure et la confiance à mi-foulée. L'accent a été mis sur la netteté des motifs et la colorimétrie vibrante des contrastes jaune et vert.",
-    result:
-      "Des clichés iconiques qui ont défini la couverture médiatique de l'événement, affirmant la position de la marque dans la haute couture ouest-africaine.",
+    context: "Collection avant-gardiste fusionnant tradition et audace.",
+    challenge: "Figer l'énergie du podium et sublimer les textures complexes.",
+    approach: "Photographie frontale, focus sur l'allure et les contrastes de couleurs.",
+    result: "Des clichés iconiques devenus le visage de l'événement.",
     metrics: ["13 clichés éditoriaux", "4 200+ impressions", "Republié par le designer"],
     heroImage: "/portfolio/mode/runway.jpg",
     secondaryImage: "/portfolio/mode/runway.jpg",
-    accentColor: "oklch(0.55 0.15 145)", // green
+    accentColor: "oklch(0.55 0.15 145)",
     instagramUrl: "https://www.instagram.com/digitcom_studios",
   },
   {
@@ -33,18 +29,14 @@ const projects = [
     year: "2026",
     date: "Été 2026",
     location: "Côtes Sénégalaises",
-    context:
-      "Une campagne éditoriale naviguant à l'intersection de la mode urbaine (denim brut) et de l'environnement maritime traditionnel sénégalais, incarnant l'esprit de liberté conceptuelle.",
-    challenge:
-      "Créer une synergie visuelle entre les tenues structurées et le mouvement imprévisible de l'océan, tout en conservant une esthétique haute couture sur un bateau en mouvement.",
-    approach:
-      "L'utilisation de la lumière naturelle diffuse de l'océan atlantique pour adoucir les textures du jean et faire ressortir le maquillage éditorial et les coiffures architecturales.",
-    result:
-      "Une série éditoriale onirique, célébrant le contraste entre la rigueur du denim et la fluidité de l'eau, largement relayée dans les magazines de mode alternatifs.",
+    context: "Campagne croisant streetwear et environnement maritime.",
+    challenge: "Créer une synergie entre tenues structurées et mouvement de l'océan.",
+    approach: "Exploitation de la lumière naturelle diffuse de l'Atlantique.",
+    result: "Série onirique largement relayée en presse alternative.",
     metrics: ["8 publications presse", "2 800+ partages", "Couverture magazine"],
     heroImage: "/portfolio/mode/boat.jpg",
     secondaryImage: "/portfolio/mode/boat.jpg",
-    accentColor: "oklch(0.3 0.05 250)", // deep blue/denim
+    accentColor: "oklch(0.3 0.05 250)",
     instagramUrl: "https://www.instagram.com/digitcom_studios",
   },
   {
@@ -54,18 +46,14 @@ const projects = [
     year: "2025",
     date: "Hiver 2025",
     location: "Îles de la Madeleine",
-    context:
-      "Mise en lumière d'une collection balnéaire unique, entièrement conçue en crochet à la main, ornée de perles et de cristaux, célébrant le savoir-faire artisanal local.",
-    challenge:
-      "Faire ressortir les détails minutieux (perles, nœuds, textures) face à un décor naturel texturé (roches volcaniques), sans que le vêtement ne se perde dans l'environnement.",
-    approach:
-      "Des plans rapprochés avec une faible profondeur de champ, focalisant l'attention sur la délicatesse des broderies perlées contrastant avec la peau et la pierre brute.",
-    result:
-      "Des visuels sensuels et texturés qui ont sublimé l'artisanat de mode, générant un engouement immédiat pour le fait-main haut de gamme.",
+    context: "Collection balnéaire en crochet 100% fait-main.",
+    challenge: "Détacher les perles minutieuses du décor rocheux volcanique.",
+    approach: "Plans rapprochés macro contrastant la peau et la pierre brute.",
+    result: "Visuels texturés qui ont généré un engouement immédiat.",
     metrics: ["Stock épuisé en 48h", "3 500+ sauvegardes", "Collab reconduite"],
     heroImage: "/portfolio/mode/beaded.jpg",
     secondaryImage: "/portfolio/mode/beaded.jpg",
-    accentColor: "oklch(0.6 0.15 45)", // amber/beaded
+    accentColor: "oklch(0.6 0.15 45)",
     instagramUrl: "https://www.instagram.com/digitcom_studios",
   },
   {
@@ -75,18 +63,14 @@ const projects = [
     year: "2025",
     date: "Automne 2025",
     location: "Studio Principal",
-    context:
-      "Une incursion intimiste dans les coulisses de la création. Capturer le chaos organisé des essayages avant qu'une collection haute couture ne soit présentée au monde.",
-    challenge:
-      "Isoler des moments de pure poésie visuelle au milieu de l'agitation des cabines, avec un éclairage souvent mixte et imprévisible.",
-    approach:
-      "Approche photo-documentaire en noir et blanc contrasté, privilégiant les jeux d'ombres et la tension palpable dans le regard des mannequins et des créateurs.",
-    result:
-      "Une série documentaire saluée par la critique pour son authenticité, plongeant l'audience directement dans l'intimité du vêtement en devenir.",
+    context: "Incursion intimiste dans les essayages haute couture.",
+    challenge: "Isoler la poésie visuelle au milieu du chaos des cabines.",
+    approach: "Documentaire noir et blanc tranché sur les jeux d'ombres.",
+    result: "Une série brute saluée pour son authenticité rare.",
     metrics: ["15 000+ vues ciblées", "Publié dans Vogue Africa", "Exposition exclusive"],
     heroImage: "/portfolio/designer-backstage.png",
     secondaryImage: "/portfolio/designer-backstage.png",
-    accentColor: "oklch(0.2 0 0)", // dark editorial tone
+    accentColor: "oklch(0.2 0 0)",
     instagramUrl: "https://www.instagram.com/digitcom_studios",
   },
   {
@@ -96,18 +80,14 @@ const projects = [
     year: "2026",
     date: "Janvier 2026",
     location: "Studio Industriel",
-    context:
-      "Campagne de marque pour une collection streetwear jouant sur la superposition, le velours côtelé et les accessoires color-block, conçue pour la jeunesse créative urbaine.",
-    challenge:
-      "Donner vie à un lookbook studio typiquement statique en insufflant du mouvement et une personnalité affirmée au mannequin, tout en gardant des couleurs fidèles.",
-    approach:
-      "Lumière de studio douce mais enveloppante, guidant le modèle vers des poses désarticulées et dynamiques, mettant en exergue la texture du velours et le fit de la tenue.",
-    result:
-      "Un lookbook moderne et rafraîchissant. La silhouette fluide et la palette terre/rose sont devenues instantanément virales sur les réseaux de la mode urbaine.",
+    context: "Lookbook streetwear misant sur la superposition color-block.",
+    challenge: "Insuffler un mouvement continu dans un décor studio statique.",
+    approach: "Lumière douce guidant des poses résolument désarticulées.",
+    result: "Un lookbook rafraîchissant devenu viral instantanément.",
     metrics: ["6 200+ impressions", "Viralité streetwear", "+45% followers marque"],
     heroImage: "/portfolio/mode/corduroy.jpg",
     secondaryImage: "/portfolio/mode/corduroy.jpg",
-    accentColor: "oklch(0.5 0.1 140)", // sage green
+    accentColor: "oklch(0.5 0.1 140)",
     instagramUrl: "https://www.instagram.com/digitcom_studios",
   },
 ];
