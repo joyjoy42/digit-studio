@@ -46,13 +46,20 @@ export function HeroSection() {
   }, [skipped]);
 
   const heroImages = [
-    "/hero/hero-1.jpg",
-    "/hero/hero-2.jpg",
-    "/hero/hero-3.jpg",
+    "/gallery/01.jpg",
+    "/gallery/05.jpg",
+    "/gallery/hero-camera.jpeg",
   ];
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background">
+      {/* Matte green ambient glow — atmospheric background */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          background: "radial-gradient(ellipse 70% 50% at 50% 80%, oklch(0.35 0.08 148 / 0.25) 0%, transparent 70%)",
+        }}
+      />
       {/* Background Image Sequence - Subtle during early phases */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence>
@@ -60,7 +67,7 @@ export function HeroSection() {
             <motion.div
               key={phase}
               initial={{ opacity: 0 }}
-              animate={{ opacity: phase === "reveal" ? 0.07 : 0.03 }}
+              animate={{ opacity: phase === "reveal" ? 0.9 : 0.05 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 2 }}
               className="absolute inset-0"
@@ -69,8 +76,12 @@ export function HeroSection() {
                 src={heroImages[phase === "story" ? 0 : phase === "standard" ? 1 : 2]}
                 alt="Background Story"
                 fill
-                className="object-cover grayscale"
+                className={`object-cover transition-all duration-1000 ${phase === "reveal" ? "grayscale-0 object-center" : "grayscale"}`}
               />
+              {/* Overlay minimaliste pour garantir la lisibilité du texte sans casser le design */}
+              {phase === "reveal" && (
+                <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/90 mix-blend-multiply" />
+              )}
             </motion.div>
           )}
         </AnimatePresence>
@@ -98,9 +109,9 @@ export function HeroSection() {
       <div
         className="pointer-events-none absolute inset-0 z-1"
         style={{
-          backgroundImage: `linear-gradient(oklch(0.88 0 0) 1px, transparent 1px), linear-gradient(90deg, oklch(0.88 0 0) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(oklch(0.50 0.11 148 / 0.18) 1px, transparent 1px), linear-gradient(90deg, oklch(0.50 0.11 148 / 0.18) 1px, transparent 1px)`,
           backgroundSize: "80px 80px",
-          opacity: 0.15,
+          opacity: 1,
         }}
       />
 
@@ -261,7 +272,8 @@ export function HeroSection() {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.2, delay: 1 }}
-                className="mx-auto mb-8 h-px w-24 bg-foreground md:mb-12 md:w-32"
+                style={{ background: "oklch(0.50 0.11 148)" }}
+                className="mx-auto mb-8 h-px w-24 md:mb-12 md:w-32"
               />
 
               {/* Tagline — Plan 3: Client-centered language */}
@@ -287,9 +299,9 @@ export function HeroSection() {
               >
                 <a
                   href="#portfolio"
-                  className="group relative inline-block overflow-hidden border border-foreground bg-foreground px-12 py-5 text-xs uppercase tracking-[0.2em] text-background transition-all hover:bg-transparent hover:text-foreground"
+                  className="btn-green-sweep group relative inline-block overflow-hidden px-12 py-5 text-xs uppercase tracking-[0.2em]"
                 >
-                  Découvrir nos réalisations
+                  <span>Découvrir nos réalisations</span>
                 </a>
                 <a
                   href="#contact"

@@ -74,7 +74,7 @@ export function ContactSection() {
                   <motion.span
                     animate={{ opacity: [1, 0.3, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="h-2 w-2 rounded-full bg-foreground"
+                    className="green-dot h-2 w-2"
                   />
                   <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     2 projets disponibles ce mois-ci
@@ -152,7 +152,7 @@ export function ContactSection() {
                         id={field.id}
                         value={formData[field.key]}
                         onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
-                        className="w-full border-b border-border bg-transparent py-3 text-foreground outline-none transition-colors focus:border-foreground"
+                        className="w-full border-b border-border bg-transparent py-3 text-foreground outline-none transition-colors focus:border-accent"
                         required
                       />
                     </div>
@@ -170,14 +170,14 @@ export function ContactSection() {
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full resize-none border-b border-border bg-transparent py-3 text-foreground outline-none transition-colors focus:border-foreground"
+                      className="w-full resize-none border-b border-border bg-transparent py-3 text-foreground outline-none transition-colors focus:border-accent"
                       required
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="group w-full border border-foreground bg-foreground px-10 py-4 text-xs uppercase tracking-[0.2em] text-background transition-all hover:bg-background hover:text-foreground"
+                    className="btn-green-sweep w-full px-10 py-4 text-xs uppercase tracking-[0.2em]"
                   >
                     Démarrer votre projet
                   </button>
@@ -197,7 +197,7 @@ export function ContactSection() {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                className="mb-12 h-px w-32 origin-left bg-foreground"
+                className="mb-12 h-px w-32 origin-left" style={{background:"oklch(0.50 0.11 148)"}}
               />
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -226,7 +226,7 @@ export function ContactSection() {
                 <motion.span
                   animate={{ opacity: [1, 0.4, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="h-2 w-2 rounded-full bg-foreground"
+                  className="green-dot h-2 w-2"
                 />
                 Digitcom Studios · Dakar, Sénégal
               </motion.div>
@@ -234,7 +234,7 @@ export function ContactSection() {
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.2, delay: 2, ease: [0.22, 1, 0.36, 1] }}
-                className="mt-12 h-px w-32 origin-right bg-foreground"
+                className="mt-12 h-px w-32 origin-right" style={{background:"oklch(0.50 0.11 148)"}}
               />
             </motion.div>
           )}

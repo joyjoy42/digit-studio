@@ -283,7 +283,7 @@ function ProjectStory({
             {/* Category badge on image */}
             <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8">
               <span
-                className="inline-block rounded-sm px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-white backdrop-blur-md"
+                className="inline-block rounded-sm px-3 py-1.5 text-[9px] uppercase tracking-[0.3em] text-foreground backdrop-blur-md"
                 style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
               >
                 {project.category} — {project.year}

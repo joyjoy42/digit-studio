@@ -99,7 +99,8 @@ export function LoadingScreen() {
           <div className="w-48 overflow-hidden">
             <div className="h-px bg-border">
               <motion.div
-                className="h-full bg-foreground"
+                style={{ background: "oklch(0.50 0.11 148)", width: `${displayProgress}%` }}
+                className="h-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${displayProgress}%` }}
                 transition={{ duration: 0.15, ease: "linear" }}

@@ -4,76 +4,82 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Pure B&W Luxury — Digitcom Studios brand charter */
-  --background: oklch(0.99 0 0);        /* near-white */
-  --foreground: oklch(0.06 0 0);        /* near-black */
-  --card: oklch(0.97 0 0);              /* off-white */
-  --card-foreground: oklch(0.06 0 0);
-  --popover: oklch(0.99 0 0);
-  --popover-foreground: oklch(0.06 0 0);
-  --primary: oklch(0.06 0 0);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.93 0 0);
-  --secondary-foreground: oklch(0.06 0 0);
-  --muted: oklch(0.93 0 0);
-  --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.06 0 0);            /* black accent instead of green */
-  --accent-foreground: oklch(0.99 0 0);
+  /* Dark Luxury — Black, White & Matte Green — Digitcom Studios */
+  --background: oklch(0.07 0 0);            /* near-black */
+  --foreground: oklch(0.94 0 0);            /* off-white */
+  --card: oklch(0.10 0 0);                  /* dark card */
+  --card-foreground: oklch(0.94 0 0);
+  --popover: oklch(0.10 0 0);
+  --popover-foreground: oklch(0.94 0 0);
+  --primary: oklch(0.94 0 0);               /* white primary */
+  --primary-foreground: oklch(0.07 0 0);
+  --secondary: oklch(0.13 0 0);             /* dark secondary */
+  --secondary-foreground: oklch(0.94 0 0);
+  --muted: oklch(0.13 0 0);
+  --muted-foreground: oklch(0.52 0 0);      /* medium grey */
+  --accent: oklch(0.50 0.11 148);           /* matte forest green */
+  --accent-foreground: oklch(0.97 0 0);
+  --green: oklch(0.50 0.11 148);            /* matte green alias */
+  --green-light: oklch(0.62 0.13 148);      /* lighter green for hover */
+  --green-dim: oklch(0.35 0.08 148);        /* dim green for subtle bg */
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.88 0 0);            /* light grey border */
-  --input: oklch(0.93 0 0);
-  --ring: oklch(0.06 0 0);
-  --chart-1: oklch(0.2 0 0);
-  --chart-2: oklch(0.4 0 0);
-  --chart-3: oklch(0.6 0 0);
+  --destructive-foreground: oklch(0.94 0 0);
+  --border: oklch(0.17 0 0);               /* dark border */
+  --input: oklch(0.13 0 0);
+  --ring: oklch(0.50 0.11 148);            /* green ring */
+  --chart-1: oklch(0.50 0.11 148);
+  --chart-2: oklch(0.62 0.13 148);
+  --chart-3: oklch(0.35 0.08 148);
   --chart-4: oklch(0.75 0 0);
-  --chart-5: oklch(0.85 0 0);
+  --chart-5: oklch(0.94 0 0);
   --radius: 0.125rem;
-  --sidebar: oklch(0.97 0 0);
-  --sidebar-foreground: oklch(0.06 0 0);
-  --sidebar-primary: oklch(0.06 0 0);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.93 0 0);
-  --sidebar-accent-foreground: oklch(0.06 0 0);
-  --sidebar-border: oklch(0.88 0 0);
-  --sidebar-ring: oklch(0.06 0 0);
+  --sidebar: oklch(0.10 0 0);
+  --sidebar-foreground: oklch(0.94 0 0);
+  --sidebar-primary: oklch(0.50 0.11 148);
+  --sidebar-primary-foreground: oklch(0.97 0 0);
+  --sidebar-accent: oklch(0.13 0 0);
+  --sidebar-accent-foreground: oklch(0.94 0 0);
+  --sidebar-border: oklch(0.17 0 0);
+  --sidebar-ring: oklch(0.50 0.11 148);
 }
 
 .dark {
-  /* Keep dark mode identical to light for B&W brand */
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.06 0 0);
-  --card: oklch(0.97 0 0);
-  --card-foreground: oklch(0.06 0 0);
-  --popover: oklch(0.99 0 0);
-  --popover-foreground: oklch(0.06 0 0);
-  --primary: oklch(0.06 0 0);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.93 0 0);
-  --secondary-foreground: oklch(0.06 0 0);
-  --muted: oklch(0.93 0 0);
-  --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.06 0 0);
-  --accent-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.88 0 0);
-  --input: oklch(0.93 0 0);
-  --ring: oklch(0.06 0 0);
-  --chart-1: oklch(0.2 0 0);
-  --chart-2: oklch(0.4 0 0);
-  --chart-3: oklch(0.6 0 0);
+  /* Dark mode mirrors root — already dark */
+  --background: oklch(0.07 0 0);
+  --foreground: oklch(0.94 0 0);
+  --card: oklch(0.10 0 0);
+  --card-foreground: oklch(0.94 0 0);
+  --popover: oklch(0.10 0 0);
+  --popover-foreground: oklch(0.94 0 0);
+  --primary: oklch(0.94 0 0);
+  --primary-foreground: oklch(0.07 0 0);
+  --secondary: oklch(0.13 0 0);
+  --secondary-foreground: oklch(0.94 0 0);
+  --muted: oklch(0.13 0 0);
+  --muted-foreground: oklch(0.52 0 0);
+  --accent: oklch(0.50 0.11 148);
+  --accent-foreground: oklch(0.97 0 0);
+  --green: oklch(0.50 0.11 148);
+  --green-light: oklch(0.62 0.13 148);
+  --green-dim: oklch(0.35 0.08 148);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.94 0 0);
+  --border: oklch(0.17 0 0);
+  --input: oklch(0.13 0 0);
+  --ring: oklch(0.50 0.11 148);
+  --chart-1: oklch(0.50 0.11 148);
+  --chart-2: oklch(0.62 0.13 148);
+  --chart-3: oklch(0.35 0.08 148);
   --chart-4: oklch(0.75 0 0);
-  --chart-5: oklch(0.85 0 0);
-  --sidebar: oklch(0.97 0 0);
-  --sidebar-foreground: oklch(0.06 0 0);
-  --sidebar-primary: oklch(0.06 0 0);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.93 0 0);
-  --sidebar-accent-foreground: oklch(0.06 0 0);
-  --sidebar-border: oklch(0.88 0 0);
-  --sidebar-ring: oklch(0.06 0 0);
+  --chart-5: oklch(0.94 0 0);
+  --sidebar: oklch(0.10 0 0);
+  --sidebar-foreground: oklch(0.94 0 0);
+  --sidebar-primary: oklch(0.50 0.11 148);
+  --sidebar-primary-foreground: oklch(0.97 0 0);
+  --sidebar-accent: oklch(0.13 0 0);
+  --sidebar-accent-foreground: oklch(0.94 0 0);
+  --sidebar-border: oklch(0.17 0 0);
+  --sidebar-ring: oklch(0.50 0.11 148);
 }
 
 @theme inline {
@@ -126,22 +132,22 @@
     @apply bg-background text-foreground;
   }
 
-  /* Minimal luxury scrollbar, B&W */
+  /* Dark luxury scrollbar with green thumb */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
   }
 
   ::-webkit-scrollbar-track {
-    background: oklch(0.97 0 0);
+    background: oklch(0.07 0 0);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: oklch(0.75 0 0);
+    background: oklch(0.35 0.08 148);
     border-radius: 2px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.06 0 0);
+    background: oklch(0.50 0.11 148);
   }
 }
 
@@ -150,17 +156,163 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Selection color */
+/* Selection — matte green tint */
 ::selection {
-  background: oklch(0.06 0 0 / 0.12);
-  color: oklch(0.06 0 0);
+  background: oklch(0.50 0.11 148 / 0.25);
+  color: oklch(0.94 0 0);
 }
 
-/* Utility: image grayscale on hover off */
+/* ─── Matte Green Animation Keyframes ─── */
+
+/* Gentle green pulse glow */
+@keyframes green-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 oklch(0.50 0.11 148 / 0);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 18px 4px oklch(0.50 0.11 148 / 0.35);
+    opacity: 0.85;
+  }
+}
+
+/* Left-to-right green fill sweep on buttons */
+@keyframes green-sweep {
+  0% { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+
+/* Fade up reveal */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle green scan line across hero */
+@keyframes green-scan {
+  0%   { top: -2px; opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.3; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* Green dot breathing */
+@keyframes green-breathe {
+  0%, 100% { opacity: 1; box-shadow: 0 0 4px 1px oklch(0.50 0.11 148 / 0.5); }
+  50%       { opacity: 0.4; box-shadow: 0 0 0 0 oklch(0.50 0.11 148 / 0); }
+}
+
+/* Slow number count shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── Utility classes ─── */
+
+/* Green availability dot */
+.green-dot {
+  animation: green-breathe 2.4s ease-in-out infinite;
+  background-color: oklch(0.50 0.11 148);
+  border-radius: 50%;
+}
+
+/* CTA button with green sweep hover */
+.btn-green-sweep {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid oklch(0.50 0.11 148);
+  color: oklch(0.94 0 0);
+  transition: color 0.3s ease;
+}
+.btn-green-sweep::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: oklch(0.50 0.11 148);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 0;
+}
+.btn-green-sweep:hover::before {
+  transform: scaleX(1);
+}
+.btn-green-sweep span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Portfolio image — subtle green overlay on hover */
 .portfolio-image {
-  filter: grayscale(20%);
-  transition: filter 0.6s ease;
+  filter: grayscale(25%) brightness(0.85);
+  transition: filter 0.6s ease, transform 0.6s ease;
 }
 .portfolio-image:hover {
-  filter: grayscale(0%);
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.03);
+}
+
+/* Stat numbers shimmer when in view */
+.stat-shimmer {
+  background: linear-gradient(
+    90deg,
+    oklch(0.94 0 0) 25%,
+    oklch(0.62 0.13 148) 50%,
+    oklch(0.94 0 0) 75%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Green underline accent for nav active */
+.nav-green-underline {
+  position: relative;
+}
+.nav-green-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: oklch(0.50 0.11 148);
+  transition: width 0.3s ease;
+}
+.nav-green-underline:hover::after {
+  width: 100%;
+}
+
+/* Section fade-up animation for scroll reveals */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Decorative green line */
+.green-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    oklch(0.50 0.11 148),
+    transparent
+  );
+  height: 1px;
+}
+
+/* Green glow on focus inputs */
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px oklch(0.50 0.11 148 / 0.6), 0 0 12px oklch(0.50 0.11 148 / 0.15);
+  border-color: oklch(0.50 0.11 148) !important;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }

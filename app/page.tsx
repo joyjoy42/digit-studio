@@ -1,11 +1,10 @@
 import { Navigation } from "@/components/navigation";
+import { InteractiveGallery } from "@/components/interactive-gallery";
 import { HeroSection } from "@/components/hero-section";
-import { CraftSection } from "@/components/craft-section";
-import { Marquee } from "@/components/marquee";
-import { PortfolioSection } from "@/components/portfolio-section";
-import { TestimonialsSection } from "@/components/testimonials-section";
 import { ServicesSection } from "@/components/services-section";
+import { PortfolioSection } from "@/components/portfolio-section";
 import { AboutSection } from "@/components/about-section";
+import { TestimonialsSection } from "@/components/testimonials-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { LoadingScreen } from "@/components/loading-screen";
@@ -18,26 +17,13 @@ export default function HomePage() {
       <LoadingScreen />
       <CustomCursor />
       <Navigation />
-      <main>
+      <main className="relative z-10 w-full overflow-x-hidden">
         <HeroSection />
-        <CraftSection />
-        <Marquee />
-        <PortfolioSection />
-        <TestimonialsSection />
-        <Marquee
-          words={[
-            "LOOKBOOK",
-            "CAMPAGNE",
-            "ÉDITORIAL",
-            "BACKSTAGE",
-            "PODIUM",
-            "COULEURS",
-            "TEXTURES",
-            "SILHOUETTES",
-          ]}
-        />
-        <ServicesSection />
         <AboutSection />
+        <PortfolioSection />
+        <InteractiveGallery />
+        <TestimonialsSection />
+        <ServicesSection />
         <ContactSection />
       </main>
       <Footer />

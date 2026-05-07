@@ -37,10 +37,10 @@ export function Footer() {
                 <input
                   type="email"
                   placeholder="Votre email"
-                  className="flex-1 border-b border-border bg-transparent px-2 py-2 text-sm text-foreground outline-none transition-colors focus:border-foreground placeholder:text-muted-foreground/50"
+                  className="flex-1 border-b border-border bg-transparent px-2 py-2 text-sm text-foreground outline-none transition-colors focus:border-accent placeholder:text-muted-foreground/50"
                 />
-                <button className="border border-foreground bg-foreground px-4 py-2 text-xs uppercase tracking-[0.15em] text-background transition-all hover:bg-background hover:text-foreground">
-                  Recevoir
+                <button className="btn-green-sweep px-4 py-2 text-xs uppercase tracking-[0.15em]">
+                  <span>Recevoir</span>
                 </button>
               </div>
             </div>

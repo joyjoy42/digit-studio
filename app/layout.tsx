@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Instrument_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { AnimatedStraps } from "@/components/animated-straps";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#141414",
+  themeColor: "#03110D",
   width: "device-width",
   initialScale: 1,
 };
@@ -47,7 +48,10 @@ export default function RootLayout({
       className={`${playfair.variable} ${instrumentSans.variable} bg-background`}
     >
       <body className="font-sans antialiased">
-        {children}
+        <AnimatedStraps />
+        <div className="relative z-10 flex min-h-screen flex-col overflow-x-hidden">
+          {children}
+        </div>
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>

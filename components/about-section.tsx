@@ -61,6 +61,16 @@ const principles = [
   },
 ];
 
+const partners = [
+  "ALGUEYE DAKAR",
+  "ADAMA PARIS",
+  "COLLE SOW ARDO",
+  "ALIA BARE",
+  "MADO MARQUES",
+  "SAPAMINA",
+  "NKUHURU DESIGN",
+];
+
 export function AboutSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -204,7 +214,7 @@ export function AboutSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isPrinciplesInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                className="block font-serif text-4xl text-foreground md:text-5xl"
+                className="stat-shimmer block font-serif text-4xl md:text-5xl"
               >
                 <AnimatedCounter
                   target={stat.target}
@@ -219,6 +229,30 @@ export function AboutSection() {
             </div>
           ))}
         </motion.div>
+
+        {/* Partners Marquee */}
+        <div className="mt-24 lg:mt-32 overflow-hidden border-y border-border py-8">
+          <motion.div
+            className="flex whitespace-nowrap"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              x: {
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+              },
+            }}
+          >
+            {[0, 1].map((i) => (
+              <span
+                key={i}
+                className="mr-12 text-lg md:text-xl font-serif text-foreground/70"
+              >
+                {partners.join(" / ")} /{" "}
+              </span>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

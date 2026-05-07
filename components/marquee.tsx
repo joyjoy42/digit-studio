@@ -25,7 +25,7 @@ export function Marquee({
     const marqueeText = words.join(" · ");
 
     return (
-        <div className="overflow-hidden border-y border-border bg-background py-5">
+        <div className="overflow-hidden border-y border-border bg-transparent py-5">
             <motion.div
                 className="flex whitespace-nowrap"
                 animate={{ x: ["0%", "-50%"] }}

@@ -55,7 +55,7 @@ export function Navigation() {
                 className="group relative text-xs uppercase tracking-[0.2em] text-foreground/60 transition-colors hover:text-foreground"
               >
                 {item.name}
-                <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-0.5 left-0 h-px w-0 transition-all duration-300 group-hover:w-full" style={{ background: "oklch(0.50 0.11 148)" }} />
               </Link>
             ))}
           </nav>
@@ -72,7 +72,7 @@ export function Navigation() {
               <motion.span
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="h-2 w-2 rounded-full bg-foreground"
+                className="green-dot h-2 w-2"
               />
               <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                 Disponible
@@ -82,9 +82,9 @@ export function Navigation() {
             {/* Desktop CTA */}
             <Link
               href="#contact"
-              className="hidden border border-foreground/30 px-5 py-2 text-xs uppercase tracking-[0.2em] text-foreground transition-all hover:bg-foreground hover:text-background md:block"
+              className="btn-green-sweep hidden px-5 py-2 text-xs uppercase tracking-[0.2em] md:block"
             >
-              Démarrer un projet
+              <span>Démarrer un projet</span>
             </Link>
 
             {/* Mobile Menu Button */}
@@ -148,7 +148,7 @@ export function Navigation() {
                 <motion.span
                   animate={{ opacity: [1, 0.3, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="h-2 w-2 rounded-full bg-foreground"
+                  className="green-dot h-2 w-2"
                 />
                 <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                   Disponible pour de nouveaux projets
@@ -157,9 +157,9 @@ export function Navigation() {
               <Link
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className="border border-foreground px-8 py-3 text-sm uppercase tracking-[0.2em] text-foreground transition-all hover:bg-foreground hover:text-background"
+                className="btn-green-sweep px-8 py-3 text-sm uppercase tracking-[0.2em]"
               >
-                Démarrer un projet
+                <span>Démarrer un projet</span>
               </Link>
             </motion.div>
           </motion.nav>

@@ -29,7 +29,7 @@ export function TestimonialsSection() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section ref={ref} className="bg-card py-24 lg:py-36">
+        <section ref={ref} className="bg-transparent py-24 lg:py-36">
             <div className="mx-auto max-w-[1800px] px-6 lg:px-12">
                 {/* Header */}
                 <motion.div
@@ -38,31 +38,31 @@ export function TestimonialsSection() {
                     transition={{ duration: 0.8 }}
                     className="mb-16 text-center"
                 >
-                    <span className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground">
+                    <span className="text-[10px] uppercase tracking-[0.4em] text-white/50">
                         Ce que disent nos clients
                     </span>
                 </motion.div>
 
                 {/* Testimonials grid */}
-                <div className="grid gap-px bg-border md:grid-cols-3">
+                <div className="grid gap-px bg-white/10 md:grid-cols-3">
                     {testimonials.map((t, i) => (
                         <motion.div
                             key={t.author}
                             initial={{ opacity: 0, y: 30 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.7, delay: i * 0.15 }}
-                            className="bg-card px-8 py-10 lg:px-10 lg:py-12"
+                            className="bg-transparent px-8 py-10 lg:px-10 lg:py-12"
                         >
                             {/* Quote mark */}
-                            <span className="mb-6 block font-serif text-5xl leading-none text-foreground/10">
+                            <span className="mb-6 block font-serif text-5xl leading-none text-white/10">
                                 &ldquo;
                             </span>
-                            <p className="mb-8 font-serif text-lg italic leading-relaxed text-foreground">
+                            <p className="mb-8 font-serif text-lg italic leading-relaxed text-white">
                                 {t.quote}
                             </p>
-                            <div className="border-t border-border pt-6">
-                                <p className="text-sm font-medium text-foreground">{t.author}</p>
-                                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                            <div className="border-t border-white/20 pt-6">
+                                <p className="text-sm font-medium text-white">{t.author}</p>
+                                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/50">
                                     {t.role}
                                 </p>
                             </div>

@@ -58,37 +58,37 @@ function ServiceCard({
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="group relative border-t border-border py-12 lg:py-16"
+      className="group relative"
     >
       <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
         {/* Number */}
-        <div className="lg:col-span-1">
-          <span className="font-mono text-sm text-accent">{service.number}</span>
+        <div className="col-span-1 border-t border-white/20 py-12 lg:py-16">
+          <span className="font-mono text-sm text-white/50">{service.number}</span>
         </div>
 
         {/* Title */}
-        <div className="lg:col-span-3">
-          <h3 className="font-serif text-3xl text-foreground transition-colors group-hover:text-accent md:text-4xl">
+        <div className="col-span-3 border-t border-white/20 py-12 lg:py-16">
+          <h3 className="font-serif text-3xl text-white transition-colors group-hover:text-white/80 md:text-4xl">
             {service.title}
           </h3>
         </div>
 
         {/* Description */}
-        <div className="lg:col-span-4">
-          <p className="text-muted-foreground leading-relaxed">
+        <div className="col-span-4 border-t border-white/20 py-12 lg:py-16">
+          <p className="text-white/70 leading-relaxed">
             {service.description}
           </p>
         </div>
 
         {/* Details */}
-        <div className="lg:col-span-4">
+        <div className="col-span-4 border-t border-white/20 py-12 lg:py-16">
           <ul className="space-y-2">
             {service.details.map((detail) => (
               <li
                 key={detail}
-                className="flex items-center gap-3 text-sm text-foreground/70"
+                className="flex items-center gap-3 text-sm text-white/70"
               >
-                <span className="h-px w-4 bg-accent" />
+                <span className="h-px w-4 bg-white/50" />
                 {detail}
               </li>
             ))}
@@ -97,7 +97,7 @@ function ServiceCard({
       </div>
 
       {/* Hover accent line */}
-      <div className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-700 group-hover:w-full" />
+      <div className="absolute bottom-0 left-0 h-px w-0 bg-white transition-all duration-700 group-hover:w-full" />
     </motion.div>
   );
 }
@@ -107,7 +107,7 @@ export function ServicesSection() {
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="bg-card py-32 lg:py-48">
+    <section id="services" className="bg-transparent py-32 lg:py-48 border-t border-white/10">
       <div className="mx-auto max-w-[1800px] px-6 lg:px-12">
         {/* Section header */}
         <div ref={headerRef} className="mb-16 lg:mb-24">
@@ -117,7 +117,7 @@ export function ServicesSection() {
             transition={{ duration: 0.8 }}
             className="mb-4"
           >
-            <span className="text-[10px] uppercase tracking-[0.4em] text-accent">
+            <span className="text-[10px] uppercase tracking-[0.4em] text-white/50">
               Ce que nous offrons
             </span>
           </motion.div>
@@ -127,18 +127,18 @@ export function ServicesSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-serif text-4xl font-light text-foreground md:text-5xl lg:text-6xl"
+              className="font-serif text-4xl font-light text-white md:text-5xl lg:text-6xl"
             >
               Une expertise au service
               <br />
-              <span className="italic text-accent">de la mode</span>
+              <span className="italic text-white">de la mode</span>
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="max-w-md text-muted-foreground"
+              className="max-w-md text-white/70"
             >
               Nous sublimons la vision des designers, des marques et des talents à travers un spectre complet de services visuels.
             </motion.p>

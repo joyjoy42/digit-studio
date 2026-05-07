@@ -108,10 +108,12 @@ export function CustomCursor() {
                     animate={{
                         width: isHovering ? 80 : 36,
                         height: isHovering ? 80 : 36,
-                        opacity: isClicking ? 0.2 : 0.4,
+                        opacity: isClicking ? 0.2 : 0.5,
+                        borderColor: isHovering ? "oklch(0.50 0.11 148)" : "oklch(0.94 0 0 / 0.2)",
+                        boxShadow: isHovering ? "0 0 14px oklch(0.50 0.11 148 / 0.45)" : "none",
                     }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className="-translate-x-1/2 -translate-y-1/2 rounded-full border border-foreground/20"
+                    className="-translate-x-1/2 -translate-y-1/2 rounded-full border"
                 />
             </motion.div>
 
